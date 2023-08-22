@@ -1,0 +1,61 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LOGIN
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Kullanıcı giriş uygulaması
+            // Kullanıcı ad ve şifre doğru ise al
+            // Yalnışta hata ver ve bu hak 3 olsun
+
+            string isim = "emir";
+            string sifre = "emir6868";
+
+            Console.WriteLine("Hoşgeldiniz Lütfen Verilen Bilgileri Doğru Şekilde Giriniz...");
+
+
+
+
+            Console.WriteLine("AD :");
+            string g_ad = Console.ReadLine();
+            Console.WriteLine("SİFRE :");
+            string g_sifre = Console.ReadLine();
+
+            if (g_ad == isim && sifre == g_sifre)
+            {
+                Console.WriteLine("Başarıyla giriş yapıldı!");
+                Console.Read();
+
+            }
+            else
+            {
+                Console.WriteLine("Girdiğiniz bilgiler yalnış!");
+                Console.WriteLine("Lütfen Tekrar Deneyiniz");
+                for (int i = 1; i < 3; i++)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine((3-i)+" hakkınız kaldı");
+                    Console.WriteLine("AD :");
+                    string g2_ad = Console.ReadLine();
+                    Console.WriteLine("SİFRE :");
+                    string g2_sifre = Console.ReadLine();
+                    if (g2_ad == isim && sifre == g2_sifre)
+                    {
+                        Console.WriteLine("Başarıyla giriş yapıldı!");
+                        Console.Read();
+                        break;
+                    }
+                    
+                    Console.WriteLine("Girdiğiniz bilgiler yanlış lütfen tekrar deneyiniz.");
+                }
+            }
+        }
+    }
+}
